@@ -170,7 +170,6 @@ while True:
         while True:
             email = input("Insira o email vinculado a conta:\n")
             print()
-            padrao = r'^[\w\.-]+@[\w\.-]+\.\w{2,}$'
             if email_re.fullmatch(email):
                 print(f"Enviamos um email para: {email} com as informações referentes a recuperação de sua conta!\ncaso esse email não esteja vinculado no sistema, ele não será enviado.\n")
                 break
