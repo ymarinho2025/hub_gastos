@@ -1,6 +1,7 @@
 import sys
 import HUB_Login
 import controle_gastos
+import criador_de_graficos
 import Calendario
 
 def menu_hub():
@@ -8,6 +9,7 @@ def menu_hub():
         print("\n=== ROUTINE HUB ===")
         print("1) Controle de Gastos")
         print("2) Calendário")
+        print("3) Criar Grafico")
         print("0) Sair")
         try:
             op = int(input("Escolha: "))
@@ -21,7 +23,9 @@ def menu_hub():
         elif op == 1:
             controle_gastos.main()
         elif op == 2:
-            Calendario.main()   # abre o menu do calendário
+            Calendario.main()
+        elif op == 3:
+            criador_de_graficos.main()
         else:
             print("Opção inválida.")
 
