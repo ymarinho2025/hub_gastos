@@ -1,8 +1,8 @@
 import sys
-import HUB_Login
-import controle_gastos
-import criador_de_graficos
-import Calendario
+import applications.Login as Login
+import applications.projects.ControleGastos as gastos
+import applications.projects.CriadorGraficos as graficos
+import applications.Calendar as calendar
 
 def menu_hub():
     while True:
@@ -21,16 +21,16 @@ def menu_hub():
             print("Saindo do Routine HUB...")
             break
         elif op == 1:
-            controle_gastos.main()
+            gastos.main()
         elif op == 2:
-            Calendario.main()
+            calendar.main()
         elif op == 3:
-            criador_de_graficos.main()
+            graficos.main()
         else:
             print("Opção inválida.")
 
 def main():
-    ok = HUB_Login.main()   # precisa retornar True no sucesso do login
+    ok = Login.main()   # precisa retornar True no sucesso do login
     if ok:
         print("Login concluído. Entrando no HUB...")
         menu_hub()
@@ -45,6 +45,6 @@ if __name__ == "__main__":
         sys.exit(0)
     finally:
         try:
-            HUB_Login.shutdown()  # fecha a conexão SQLite do módulo de login
+            Login.shutdown()  # fecha a conexão SQLite do módulo de login
         except Exception:
             pass
